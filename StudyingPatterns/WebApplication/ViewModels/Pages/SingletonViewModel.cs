@@ -8,7 +8,6 @@ namespace WebApplication.ViewModels.Pages
 	/// </summary>
 	public sealed class SingletonViewModel : MasterPageViewModel
 	{
-
 		public SingletonViewModel() : base("Singleton")
 		{
 			ViewDataCustom["SingletonActiveItemMenu"] = StyleTemplateConstants.ActiveItemMenuCss;

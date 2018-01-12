@@ -10,11 +10,16 @@ namespace WebApplication.ViewModels
 	public class MasterPageViewModel : ContextViewModel
 	{
 		/// <summary>
-		/// Заголовок страницы.
+		/// Полный заголовок страницы.
 		/// </summary>
 		public string Title { get; }
 
-		public MasterPageViewModel(string title)
+		/// <summary>
+		/// Заголовок страницы.
+		/// </summary>
+		public string TitlePage { get; }
+
+		protected MasterPageViewModel(string title)
 		{
 			if (string.IsNullOrEmpty(title))
 			{
@@ -22,6 +27,8 @@ namespace WebApplication.ViewModels
 			}
 
 			Title = $"{title} - StudyingPatterns";
+
+			TitlePage = title;
 		}
 	}
 }

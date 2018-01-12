@@ -1,6 +1,5 @@
 ﻿@viewModel WebApplication.ViewModels.Pages.DefaultViewModel, WebApplication
 @masterPage Views/MasterPage.dotmaster
 <dot:Content ContentPlaceHolderID="MainContent">
-
-	<h1>{{value: Title}}</h1>
+	<p>{{value: Title}}</p>
 </dot:Content>
