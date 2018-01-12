@@ -1,17 +1,43 @@
 ﻿@viewModel WebApplication.ViewModels.MasterPageViewModel, WebApplication
 <!DOCTYPE html>
 
-<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<html lang="ru" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-    <meta charset="utf-8" />
-    <title>WebApplication</title>
-    <dot:RequiredResource Name="bootstrap" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<title>{{value: Title}}</title>
+
+	<dot:RequiredResource Name="bootstrap" />
 </head>
 <body>
-
- 	
-
-	<dot:ContentPlaceHolder ID="MainContent" />
-
+	<div class="container">
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">Паттерны</a>
+				</div>
+				<div id="navbar" class="navbar-collapse collapse">
+					<ul class="nav navbar-nav">
+						<li class="{{value: ViewDataCustom["DefaultActiveItemMenu"]}}">
+							<a href="/">Главная</a>
+						</li>
+						<li class="{{value: ViewDataCustom["SingletonActiveItemMenu"]}}">
+							<a href="/Singleton">Singleton</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class="jumbotron">
+			<h1>Navbar example</h1>
+			<p>This example is a quick exercise to illustrate how the default, static navbar and fixed to top navbar work. It includes the responsive CSS and HTML, so it also adapts to your viewport and device.</p>
+			<p>
+				<dot:ContentPlaceHolder ID="MainContent" />
+			</p>
+		</div>
+	</div>
 </body>
 </html>
