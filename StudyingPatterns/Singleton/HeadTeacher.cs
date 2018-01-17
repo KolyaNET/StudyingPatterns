@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Класс описывает директора школы
 	/// </summary>
-    public class HeadTeacher
+    public sealed class HeadTeacher
 	{
 		private static HeadTeacher _instance;
 
@@ -14,7 +14,7 @@
 		/// </summary>
 		public string Name { get; }
 
-		protected HeadTeacher(string name)
+		public HeadTeacher(string name)
 		{
 			Name = name;
 		}

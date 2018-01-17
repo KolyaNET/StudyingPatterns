@@ -6,7 +6,7 @@ namespace Observer
 	/// <summary>
 	/// Класс описывает бабушку которая хочет получать уведомления об оценках своего внука/внучки.
 	/// </summary>
-	public class Grandmother : IObserver
+	public sealed class Grandmother : IObserver
 	{
 		/// <summary>
 		/// Имя бабушки.

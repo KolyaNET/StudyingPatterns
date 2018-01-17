@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Класс описывает школу
 	/// </summary>
-    public class School
+    public sealed class School
     {
 		/// <summary>
 		/// Директор школы

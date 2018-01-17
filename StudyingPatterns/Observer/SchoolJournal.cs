@@ -8,7 +8,7 @@ namespace Observer
 	/// <summary>
 	/// Школьный журнал.
 	/// </summary>
-    public class SchoolJournal : IObservable
+    public sealed class SchoolJournal : IObservable
 	{
 		/// <summary>
 		/// Информация из журнала.
@@ -60,10 +60,10 @@ namespace Observer
 		public void Valuation()
 		{
 			var rnd = new RandomGenerator();
-			_journalInfo.Assessment = rnd.Next(1, 5);
+			_journalInfo.Assessment = rnd.Next(1, 6);
 			_journalInfo.AssessmentDate = DateTime.Now.Date;
-			_journalInfo.Child = SchoolInfo.Children[rnd.Next(0, 2)];
-			_journalInfo.Lesson = SchoolInfo.Lessons[rnd.Next(0, 2)];
+			_journalInfo.Child = SchoolInfo.Children[rnd.Next(0, 3)];
+			_journalInfo.Lesson = SchoolInfo.Lessons[rnd.Next(0, 3)];
 
 			// TODO: В проекте библиотеки не должен быть напрямую вывод в консоль.
 			Console.WriteLine($"Выставлена оценка {_journalInfo.Assessment} ученику " +

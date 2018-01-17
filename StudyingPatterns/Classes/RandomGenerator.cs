@@ -7,7 +7,7 @@ namespace Classes
 	/// https://stackoverflow.com/questions/42426420/how-to-generate-a-cryptographically-secure-random-integer-within-a-range
 	/// TODO: Не потокобезопасно.
 	/// </summary>
-	public class RandomGenerator
+	public sealed class RandomGenerator
     {
 	    private readonly RNGCryptoServiceProvider _csp;
 

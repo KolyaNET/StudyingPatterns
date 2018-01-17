@@ -6,7 +6,7 @@ namespace Observer
 	/// <summary>
 	/// Класс описывает отца который хотел бы получать уведомления об оценках своего ребенка.
 	/// </summary>
-	public class Father : IObserver
+	public sealed class Father : IObserver
 	{
 		/// <summary>
 		/// Имя отца.

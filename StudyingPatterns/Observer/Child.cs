@@ -3,7 +3,7 @@
 	/// <summary>
 	/// Ребенок учащийся в школе.
 	/// </summary>
-	public class Child
+	public sealed class Child
 	{
 		/// <summary>
 		/// Имя ребенка.

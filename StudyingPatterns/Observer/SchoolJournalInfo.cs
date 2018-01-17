@@ -5,7 +5,7 @@ namespace Observer
 	/// <summary>
 	/// Информация из школьного журнала.
 	/// </summary>
-    public class SchoolJournalInfo
+    public sealed class SchoolJournalInfo
 	{
 		/// <summary>
 		/// Оценка в журнале.
