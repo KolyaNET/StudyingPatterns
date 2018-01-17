@@ -1,5 +1,4 @@
-﻿using Decorator;
-using Observer;
+﻿using Observer;
 using Singleton;
 using System;
 using Decorator.Grades;
@@ -100,6 +99,11 @@ namespace ConsoleApplication
 
 			void WriteGrade(Grade grade)
 			{
+				if (grade == null)
+				{
+					throw new ArgumentNullException(nameof(grade), "Не указан класс в школе.");
+				}
+
 				Console.WriteLine($"Название: {grade.FullName}. Сложность обучения: {grade.GetComplexityLearning()}");
 			}
 		}

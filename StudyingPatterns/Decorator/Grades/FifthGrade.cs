@@ -1,4 +1,6 @@
-﻿namespace Decorator.Grades
+﻿using System;
+
+namespace Decorator.Grades
 {
 	/// <inheritdoc />
 	/// <summary>

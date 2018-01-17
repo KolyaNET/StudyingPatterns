@@ -1,4 +1,5 @@
-﻿using Decorator.Grades;
+﻿using System;
+using Decorator.Grades;
 
 namespace Decorator.LessonsInDepth
 {
@@ -22,7 +23,12 @@ namespace Decorator.LessonsInDepth
 		protected LessonInDepth(string fullName, Grade grade) 
 			: base(fullName)
 		{
-			Grade = grade;
+			if (string.IsNullOrEmpty(fullName))
+			{
+				throw new ArgumentNullException(nameof(fullName), "Не указано полное название класса в школе.");
+			}
+
+			Grade = grade ?? throw new ArgumentNullException(nameof(grade), "Не указан класс в школе.");
 		}
 	}
 }
