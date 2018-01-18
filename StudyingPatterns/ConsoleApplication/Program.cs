@@ -1,8 +1,10 @@
 ﻿using Observer;
 using Singleton;
 using System;
+using AbstractFactory.Classes.Cameras;
 using Decorator.Grades;
 using Decorator.LessonsInDepth;
+using AbstractFactory.Interfaces;
 
 namespace ConsoleApplication
 {
@@ -19,6 +21,8 @@ namespace ConsoleApplication
 				Observer();
 
 				Decorator();
+
+				AbstractFactory();
 			}
 			catch (Exception e)
 			{
@@ -106,6 +110,32 @@ namespace ConsoleApplication
 
 				Console.WriteLine($"Название: {grade.FullName}. Сложность обучения: {grade.GetComplexityLearning()}");
 			}
+		}
+
+		/// <summary>
+		/// Пример работы Abstract Factory.
+		/// </summary>
+		private static void AbstractFactory()
+		{
+			Console.WriteLine("\n\r-- Abstract Factory -- \n\r");
+
+			var iPhoneXCamera = new Camera(new ApplePhoneCameraFactory());
+			Console.WriteLine("Создали камеру IPhone X.");
+			var photoIPhoneXCamera = iPhoneXCamera.TakePhoto();
+			Console.WriteLine("Сделали фото на камеру IPhone X.");
+			photoIPhoneXCamera = iPhoneXCamera.Process(photoIPhoneXCamera);
+			Console.WriteLine("Преобразовали фото на камеру IPhone X.");
+			var resultSavePhotoIPhoneXCamera = iPhoneXCamera.Save(photoIPhoneXCamera);
+			Console.WriteLine($"Сохранили фото сделанное на камеру IPhone X. Результат сохранения: {resultSavePhotoIPhoneXCamera}");
+
+			var galaxy8Camera = new Camera(new SamsungPhoneCameraFactory());
+			Console.WriteLine("\n\rСоздали камеру Galaxy 9.");
+			var photoGalaxy8Camera = galaxy8Camera.TakePhoto();
+			Console.WriteLine("Сделали фото на камеру Galaxy 9.");
+			photoGalaxy8Camera = galaxy8Camera.Process(photoGalaxy8Camera);
+			Console.WriteLine("Преобразовали фото на камеру Galaxy 9.");
+			var resultSaveGalaxy8Camera = galaxy8Camera.Save(photoGalaxy8Camera);
+			Console.WriteLine($"Сохранили фото сделанное на камеру Galaxy 9. Результат сохранения: {resultSaveGalaxy8Camera}");
 		}
 	}
 }
